@@ -10,7 +10,9 @@ public class ClienteTelefono
 
     [Required]
     public int IdCliente { get; set; }
-
+    public Cliente Cliente { get; set; }
+    
+    
     [Required]
     public string Numero { get; set; }
 }

@@ -13,5 +13,7 @@ namespace Core.Entities
         public string Nombre { get; set; }
         [Required]
         public string Precio { get; set; }
+        public ICollection<Cita> Citas { get; set; }
+
     }
 }
