@@ -1,8 +1,8 @@
 namespace ApiAnimals.Dtos
 {
-    public class PaisDto
+    public class RazaDto
     {
         public int Id { get; set; }
-        public string NombrePais { get; set; }
+        public string NombreRaza { get; set; }
     }
 }

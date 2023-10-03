@@ -9,8 +9,5 @@ namespace Core.Entities
     {
         public string NombreRaza { get; set; }
         public ICollection<Mascota> Mascotas { get; set; }
-        
-        
-        
     }
 }
