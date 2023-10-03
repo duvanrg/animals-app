@@ -1,9 +1,12 @@
 using AspNetCoreRateLimit;
+using Core.Interfaces;
+using Infrastructure.UnitOfWork;
 
 namespace ApiAnimals.Extensions
 {
     public static class ApplicationServiceExtension
     {
+        
         public static void ConfigureCors(this IServiceCollection Services) =>
         Services.AddCors(options =>
         {
@@ -13,6 +16,11 @@ namespace ApiAnimals.Extensions
                 builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
             );
         });
+
+        public static void AddAplicationServices(this IServiceCollection services)
+        {
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+        }
         public static void ConfigureRateLimiting(this IServiceCollection Services)
         {
             Services.AddMemoryCache();
