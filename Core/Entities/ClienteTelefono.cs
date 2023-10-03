@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Core.Entities;
-public class ClienteTelefono
+public class ClienteTelefono :BaseEntity
 {
 
     [Required]

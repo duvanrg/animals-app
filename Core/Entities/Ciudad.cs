@@ -10,8 +10,6 @@ public class Ciudad : BaseEntity
     public string NombreCiudad { get; set; }
     public int IdDepartamento { get; set; }
     public Departamento Departamento { get; set; }
-    public ICollection<ClienteDireccion> ClienteDirecciones { get; set; }
-    
-    
-    
+    public ICollection<Cliente> Cliente { get; set; }
+    public ClienteDireccion ClienteDireccion { get; set; }
 }

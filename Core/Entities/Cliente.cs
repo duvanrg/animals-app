@@ -10,7 +10,7 @@ public class Cliente : BaseEntity
     [Required]
     public string Nombre { get; set; }
     [Required]
-    public string apellidos { get; set; }
+    public string Apellidos { get; set; }
     [Required]
     public string Email { get; set; }
     public ClienteDireccion ClienteDireccion { get; set; }
@@ -18,7 +18,4 @@ public class Cliente : BaseEntity
     public ICollection<ClienteTelefono> ClienteTelefonos { get; set; }
     public ICollection<Mascota> Mascotas { get; set; }
     public ICollection<Cita> Citas { get; set; }
-    
-    
-
 }
