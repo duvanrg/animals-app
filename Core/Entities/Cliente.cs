@@ -14,7 +14,6 @@ public class Cliente : BaseEntity
     [Required]
     public string Email { get; set; }
     public ClienteDireccion ClienteDireccion { get; set; }
-    
     public ICollection<ClienteTelefono> ClienteTelefonos { get; set; }
     public ICollection<Mascota> Mascotas { get; set; }
     public ICollection<Cita> Citas { get; set; }
