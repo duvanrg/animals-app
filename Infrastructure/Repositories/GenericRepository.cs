@@ -40,9 +40,9 @@ namespace Infrastructure.Repositories
             return await _context.Set<T>().FindAsync(id);
         }
 
-        public virtual Task<T> GetByIdAsync(string id)
+        public virtual async Task<T> GetByIdAsync(string id)
         {
-            throw new NotImplementedException();
+            return await _context.Set<T>().FindAsync(id);
         }
 
         public virtual void Remove(T entity)
@@ -50,20 +50,14 @@ namespace Infrastructure.Repositories
             _context.Set<T>().Remove(entity);
         }
 
-        public void RemoveRange(IEnumerable<T> entities)
-        {
-            throw new NotImplementedException();
-        }
-
-        public virtual void Remove_Range(IEnumerable<T> entities)
+        public virtual void RemoveRange(IEnumerable<T> entities)
         {
             _context.Set<T>().RemoveRange(entities);
         }
 
         public virtual void Update(T entity)
         {
-            _context.Set<T>()
-                .Update(entity);
+            _context.Set<T>().Update(entity);
         }
 
         public virtual async Task<(int totalRegistros, IEnumerable<T> registros)> GetAllAsync(
