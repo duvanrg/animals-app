@@ -14,10 +14,8 @@ namespace Infrastructure.UnitOfWork
         public UnitOfWork(AnimalContext context)
         {
             _context = context;
-
         }
-
-
+        
         public void Dispose()
         {
             throw new NotImplementedException();

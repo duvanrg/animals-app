@@ -1,6 +1,8 @@
+using Core.Entities;
+
 namespace Core.Interfaces
 {
-    public interface IClienteDireccion
+    public interface IClienteDireccion: IGenericRepository<ClienteDireccion>
     {
          
     }

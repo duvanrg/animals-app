@@ -1,6 +1,8 @@
+using Core.Entities;
+
 namespace Core.Interfaces
 {
-    public interface IClienteTelefono
+    public interface IClienteTelefono: IGenericRepository<ClienteTelefono>
     {
          
     }

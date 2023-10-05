@@ -1,6 +1,8 @@
+using Core.Entities;
+
 namespace Core.Interfaces
 {
-    public interface IMascota
+    public interface IMascota: IGenericRepository<Mascota>
     {
          
     }

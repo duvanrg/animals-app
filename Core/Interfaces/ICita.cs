@@ -1,6 +1,8 @@
+using Core.Entities;
+
 namespace Core.Interfaces
 {
-    public interface ICita
+    public interface ICita: IGenericRepository<Cita>
     {
          
     }

@@ -1,6 +1,8 @@
+using Core.Entities;
+
 namespace Core.Interfaces
 {
-    public interface ICiudad
+    public interface ICiudad: IGenericRepository<Ciudad>
     {
         
     }

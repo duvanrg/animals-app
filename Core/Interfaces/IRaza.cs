@@ -1,6 +1,8 @@
+using Core.Entities;
+
 namespace Core.Interfaces
 {
-    public interface IRaza
+    public interface IRaza: IGenericRepository<Raza>
     {
          
     }

@@ -1,6 +1,8 @@
+using Core.Entities;
+
 namespace Core.Interfaces
 {
-    public interface IServicio
+    public interface IServicio: IGenericRepository<Servicio>
     {
          
     }

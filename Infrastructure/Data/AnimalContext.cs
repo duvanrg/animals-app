@@ -22,8 +22,6 @@ namespace Infrastructure.Data.Configuration
         public DbSet<ClienteDireccion> ClienteDirecciones { get; set; }
         public DbSet<ClienteTelefono> ClienteTelefonos { get; set; }
         public DbSet<Cita> Citas { get; set; }
-        
-        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

@@ -1,6 +1,8 @@
+using Core.Entities;
+
 namespace Core.Interfaces
 {
-    public interface IPais
+    public interface IPais: IGenericRepository<Pais>
     {
          
     }
