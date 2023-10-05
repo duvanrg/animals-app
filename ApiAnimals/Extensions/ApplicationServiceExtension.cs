@@ -6,7 +6,7 @@ namespace ApiAnimals.Extensions
 {
     public static class ApplicationServiceExtension
     {
-        
+
         public static void ConfigureCors(this IServiceCollection Services) =>
         Services.AddCors(options =>
         {
