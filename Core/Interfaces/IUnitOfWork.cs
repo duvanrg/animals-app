@@ -2,6 +2,7 @@ namespace Core.Interfaces
 {
     public interface IUnitOfWork
     {
-        Task<int> SaveAsync();
+        IPais Paises { get; }
+        Task<int> SaveAsync(); 
     }
 }

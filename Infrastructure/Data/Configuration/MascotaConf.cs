@@ -17,7 +17,7 @@ namespace Persistencia.Data.Configuration
             .HasMaxLength(50);
 
             builder.Property (p => p.FechaNacimiento)
-            .HasColumnType("datatime");
+            .HasColumnType("datetime");
 
             builder.HasOne (p => p.Raza)
             .WithMany (p => p.Mascotas)

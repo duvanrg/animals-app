@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Core.Interfaces;
 using Infrastructure.Data.Configuration;
+using Infrastructure.Repositories;
 
 namespace Infrastructure.UnitOfWork;
 
 public class UnitOfWork : IUnitOfWork, IDisposable
 {
-    public readonly AnimalContext _context;
+    private readonly AnimalContext _context;
+    private PaisRepo _paises;
 
     public UnitOfWork(AnimalContext context)
     {
@@ -17,6 +19,17 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 
     }
 
+    public IPais Paises
+    {
+        get
+        {
+            if (_paises == null)
+            {
+                _paises = new PaisRepo(_context);
+            }
+            return _paises;
+        }
+    }
 
     public void Dispose()
     {

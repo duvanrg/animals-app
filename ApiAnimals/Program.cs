@@ -46,4 +46,4 @@ app.MapControllers();
 app.Run();
 
 // dotnet ef migrations add InitialCreate --project ./Infrastructure/ --startup-project .\ApiAnimals\ --output-dir ./Data/Migrations
-// dotnet ef database update --project ./Infrastructura/ --startup-project ./API/
+// dotnet ef database update --project ./Infrastructure/ --startup-project ./ApiAnimals/
