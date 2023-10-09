@@ -6,9 +6,9 @@ namespace ApiAnimals.Profiles
 {
     public class MappingProfiles : Profile
     {
-        protected MappingProfiles()
+        public MappingProfiles()
         {
             CreateMap<Pais, PaisDto>().ReverseMap();
-        }
+        }   
     }
 }
