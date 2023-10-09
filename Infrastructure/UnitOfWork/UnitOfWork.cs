@@ -12,16 +12,16 @@ namespace Infrastructure.UnitOfWork;
 public class UnitOfWork : IUnitOfWork, IDisposable
 {
     private readonly AnimalContext _context;
-    private CitaRepo _Citas;
-    private CiudadRepo _Ciudades;
-    private ClienteRepo _Clientes;
-    private ClienteDireccionRepo _ClienteDirecciones;
-    private ClienteTelefonoRepo _ClienteTelefonos;
-    private DepartamentoRepo _Departamentos;
-    private MascotaRepo _Mascotas;
+    private CitaRepo _citas;
+    private CiudadRepo _ciudades;
+    private ClienteRepo _clientes;
+    private ClienteDireccionRepo _clienteDirecciones;
+    private ClienteTelefonoRepo _clienteTelefonos;
+    private DepartamentoRepo _departamentos;
+    private MascotaRepo _mascotas;
     private PaisRepo _paises;
-    private RazaRepo _Razas;
-    private ServicioRepo _Servicios;
+    private RazaRepo _razas;
+    private ServicioRepo _servicios;
 
     public UnitOfWork(AnimalContext context)
     {
@@ -33,77 +33,77 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     {
         get
         {
-            if (_Citas == null)
+            if (_citas == null)
             {
-                _Citas = new CitaRepo(_context);
+                _citas = new CitaRepo(_context);
             }
-            return _Citas;
+            return _citas;
         }
     }
     public ICiudad Ciudades
     {
         get
         {
-            if (_Ciudades == null)
+            if (_ciudades == null)
             {
-                _Ciudades = new CiudadRepo(_context);
+                _ciudades = new CiudadRepo(_context);
             }
-            return _Ciudades;
+            return _ciudades;
         }
     }
     public ICliente Clientes
     {
         get
         {
-            if (_Clientes == null)
+            if (_clientes == null)
             {
-                _Clientes = new ClienteRepo(_context);
+                _clientes = new ClienteRepo(_context);
             }
-            return _Clientes;
+            return _clientes;
         }
     }
     public IClienteDireccion ClienteDirecciones
     {
         get
         {
-            if (_ClienteDirecciones == null)
+            if (_clienteDirecciones == null)
             {
-                _ClienteDirecciones = new ClienteDireccionRepo(_context);
+                _clienteDirecciones = new ClienteDireccionRepo(_context);
             }
-            return _ClienteDirecciones;
+            return _clienteDirecciones;
         }
     }
     public IClienteTelefono ClienteTelefonos
     {
         get
         {
-            if (_ClienteTelefonos == null)
+            if (_clienteTelefonos == null)
             {
-                _ClienteTelefonos = new ClienteTelefonoRepo(_context);
+                _clienteTelefonos = new ClienteTelefonoRepo(_context);
             }
-            return _ClienteTelefonos;
+            return _clienteTelefonos;
         }
     }
     public IDepartamento Departamentos
     {
         get
         {
-            if (_Departamentos == null)
+            if (_departamentos == null)
             {
-                _Departamentos = new DepartamentoRepo(_context);
+                _departamentos = new DepartamentoRepo(_context);
             }
-            return _Departamentos;
+            return _departamentos;
         }
     }
     public IMascota Mascotas
     {
         get
         {
-            if (_Mascotas == null)
+            if (_mascotas == null)
             {
-                _Mascotas = new MascotaRepo(_context);
+                _mascotas = new MascotaRepo(_context);
             }
-            return _Mascotas;
+            return _mascotas;
         }
     }
     public IPais Paises
@@ -121,22 +121,22 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     {
         get
         {
-            if (_Razas == null)
+            if (_razas == null)
             {
-                _Razas = new RazaRepo(_context);
+                _razas = new RazaRepo(_context);
             }
-            return _Razas;
+            return _razas;
         }
     }
     public IServicio Servicios
     {
         get
         {
-            if (_Servicios == null)
+            if (_servicios == null)
             {
-                _Servicios = new ServicioRepo(_context);
+                _servicios = new ServicioRepo(_context);
             }
-            return _Servicios;
+            return _servicios;
         }
     }
 
