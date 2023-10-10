@@ -32,10 +32,7 @@ public class PaisController : BaseControllerApi
     public async Task<ActionResult<PaisDto>> Get(int id)
     {
         var pais = await _unitOfWork.Paises.GetByIdAsync(id);
-        if (pais == null)
-        {
-            return NotFound();
-        }
+        if (pais == null) return NotFound();
         return _mapper.Map<PaisDto>(pais);
     }
 
@@ -52,7 +49,7 @@ public class PaisController : BaseControllerApi
         {
             return BadRequest();
         }
-        paisDto.Id = paisDto.Id;
+        paisDto.Id = pais.Id;
         return CreatedAtAction(nameof(Post), new { id = paisDto.Id }, paisDto);
     }
 
