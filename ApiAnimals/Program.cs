@@ -38,7 +38,7 @@ app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
 
-// app.UseIpRateLimiting();
+app.UseIpRateLimiting();
 
 app.UseAuthorization();
 

@@ -29,14 +29,14 @@ public class PaisController : BaseControllerApi
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<IEnumerable<PaisDto>>> Get(int id)
+    public async Task<ActionResult<PaisDto>> Get(int id)
     {
-        var paises = await _unitOfWork.Paises.GetByIdAsync(id);
-        if (paises == null)
+        var pais = await _unitOfWork.Paises.GetByIdAsync(id);
+        if (pais == null)
         {
             return NotFound();
         }
-        return _mapper.Map<List<PaisDto>>(paises);
+        return _mapper.Map<PaisDto>(pais);
     }
 
     [HttpPost]
@@ -67,6 +67,7 @@ public class PaisController : BaseControllerApi
             return NotFound();
         }
         var paises = _mapper.Map<Pais>(paisDto);
+        paises.Id = id;
         _unitOfWork.Paises.Update(paises);
         await _unitOfWork.SaveAsync();
         return paisDto;
