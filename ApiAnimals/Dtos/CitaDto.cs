@@ -5,5 +5,7 @@ namespace ApiAnimals.Dtos
         public int Id { get; set; }
         public DateTime Fecha { get; set; }
         public TimeSpan Hora { get; set; }
+        public int IdCliente { get; set; }
+        public int ServicioId { get; set; } 
     }
 }

@@ -29,11 +29,11 @@ public class PaisController : BaseControllerApi
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<PaisDto>> Get(int id)
+    public async Task<ActionResult<IEnumerable<PaisDto>>> Get(int id)
     {
-        var pais = await _unitOfWork.Paises.GetByIdAsync(id);
-        if (pais == null) return NotFound();
-        return _mapper.Map<PaisDto>(pais);
+        var paises = await _unitOfWork.Paises.GetByIdAsync(id);
+        if (paises == null)return NotFound();
+        return _mapper.Map<List<PaisDto>>(paises);
     }
 
     [HttpPost]
@@ -45,10 +45,7 @@ public class PaisController : BaseControllerApi
         var pais = _mapper.Map<Pais>(paisDto);
         _unitOfWork.Paises.Add(pais);
         await _unitOfWork.SaveAsync();
-        if (pais == null)
-        {
-            return BadRequest();
-        }
+        if (pais == null) return BadRequest();
         paisDto.Id = pais.Id;
         return CreatedAtAction(nameof(Post), new { id = paisDto.Id }, paisDto);
     }
@@ -59,10 +56,7 @@ public class PaisController : BaseControllerApi
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<PaisDto>> Put(int id, [FromBody] PaisDto paisDto)
     {
-        if (paisDto == null)
-        {
-            return NotFound();
-        }
+        if (paisDto == null)return NotFound();
         var paises = _mapper.Map<Pais>(paisDto);
         paises.Id = id;
         _unitOfWork.Paises.Update(paises);
@@ -76,10 +70,7 @@ public class PaisController : BaseControllerApi
     public async Task<IActionResult> Delete(int id)
     {
         var pais = await _unitOfWork.Paises.GetByIdAsync(id);
-        if (pais == null)
-        {
-            return NotFound();
-        }
+        if (pais == null)return NotFound();
         _unitOfWork.Paises.Remove(pais);
         await _unitOfWork.SaveAsync();
         return NoContent();

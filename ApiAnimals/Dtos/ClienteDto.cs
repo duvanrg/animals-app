@@ -1,6 +1,6 @@
 namespace ApiAnimals.Dtos
 {
-    public class Cliente
+    public class ClienteDto
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
