@@ -56,8 +56,10 @@ namespace ApiAnimals.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<RazaDto>> Put(int id, [FromBody] RazaDto razaDto)
         {
-            if (razaDto == null) return NotFound();
             var raza = _mapper.Map<Raza>(razaDto);
+            if (razaDto == null) return NotFound();
+            if (raza.Id == 0) raza.Id = id;
+            if (raza.Id != id) return BadRequest();
             raza.Id = id;
             _unitOfWork.Razas.Update(raza);
             await _unitOfWork.SaveAsync();

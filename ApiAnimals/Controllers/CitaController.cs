@@ -44,6 +44,7 @@ public class CitaController : BaseControllerApi
     public async Task<ActionResult<Cita>> Post(CitaDto citaDto)
     {
         var cita = _mapper.Map<Cita>(citaDto);
+        // if ( citaDto.Fecha == DateTime.MinValue) citaDto.Fecha = DateTime.Now;
         _unitOfWork.Citas.Add(cita);
         await _unitOfWork.SaveAsync();
         if (citaDto == null) return BadRequest();

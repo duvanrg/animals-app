@@ -44,6 +44,7 @@ namespace ApiAnimals.Controllers
         public async Task<ActionResult<Mascota>> Post(MascotaDto mascotaDto)
         {
             var mascota = _mapper.Map<Mascota>(mascotaDto);
+            if(mascotaDto.FechaNacimiento == DateTime.MinValue) mascotaDto.FechaNacimiento = DateTime.Now;
             _unitOfWork.Mascotas.Add(mascota);
             await _unitOfWork.SaveAsync();
             if (mascota == null) return BadRequest();
