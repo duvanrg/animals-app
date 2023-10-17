@@ -11,22 +11,22 @@ namespace Infrastructure.Data.Configuration
             builder.ToTable("Cita");
             builder.HasKey(e => e.Id);
             builder.Property(e => e.Id);
-            
-            builder. Property (p => p.Fecha)
+
+            builder.Property(p => p.Fecha)
             .HasColumnType("Date");
-            builder. Property (p => p.Hora)
+            builder.Property(p => p.Hora)
             .HasColumnType("time");
 
             builder.HasOne(p => p.Cliente)
-            .WithMany (p => p.Citas)
+            .WithMany(p => p.Citas)
             .HasForeignKey(p => p.IdCliente);
 
-            builder.HasOne (p => p.Mascota)
-            .WithMany (p => p.Citas)
+            builder.HasOne(p => p.Mascota)
+            .WithMany(p => p.Citas)
             .HasForeignKey(p => p.IdMascota);
 
-            builder.HasOne (p => p.Servicio)
-            .WithMany (p => p.Citas)
+            builder.HasOne(p => p.Servicio)
+            .WithMany(p => p.Citas)
             .HasForeignKey(p => p.ServicioId);
         }
     }
